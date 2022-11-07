@@ -27,7 +27,7 @@ class ReservationController extends Controller
         $codeVilleRendre = $request->input('codeVilleRendre');
         $volumeEstime = $request->input('volumeEstime');
         $compteUtilisateur = $request->session()->get('utilisateur');
-        $code = $compteUtilisateur["codeUtilisateur"];
+        $code = $compteUtilisateur["code"];
         $codeReservation = Data::AjouterUneReservation($dateDebutReservation, 
         $dateFinReservation, time(), $codeVilleMiseDisposition, $codeVilleRendre, $volumeEstime, $code);
         session()->put('codeReservation', $codeReservation);
