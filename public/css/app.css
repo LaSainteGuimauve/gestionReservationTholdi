@@ -1,0 +1,18 @@
+
+html,h1,h2,h3,h4,h5,h6,p,div,span,nav{
+    font-family:"Times New Roman", Times, serif;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+ 
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background: #000000;
+    color: #FFFFFF;
+}
