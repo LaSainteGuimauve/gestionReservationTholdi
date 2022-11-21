@@ -20,5 +20,7 @@ Route::group(['prefix' => 'reservation'], function () {
     Route::get('ConsultationReservations', 'ReservationController@consulterReservation')->name('ConsultationReservations');
     Route::post('FinaliserLaReservation', 'ReservationController@finaliserLaReservation')->name('FinaliserLaReservation');
     Route::post('ConfirmerReservation', 'ReservationController@confirmerReservation')->name('ConfirmerReservation');
-
+});
+Route::group(['prefix' => 'devis'], function(){
+   Route::get('ConsulterDevis', 'DevisController@consulterDevis')->name('ConsulterDevis');    
 });

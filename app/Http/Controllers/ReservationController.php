@@ -28,7 +28,7 @@ class ReservationController extends Controller {
         $codeVilleRendre = $request->input('codeVilleRendre');
         $volumeEstime = $request->input('volumeEstime');
         $compteUtilisateur = $request->session()->get('utilisateur');
-        $code = $compteUtilisateur["code"];
+        $codeUtilisateur = $compteUtilisateur->getCode();
         $codeReservation = Data::AjouterUneReservation($dateDebutReservation,
                         $dateFinReservation, time(), $codeVilleMiseDisposition, $codeVilleRendre, $volumeEstime, $code);
         session()->put('codeReservation', $codeReservation);
@@ -74,7 +74,7 @@ class ReservationController extends Controller {
 
     public function consulterReservation(Request $request) {
         $compteUtilisateur = $request->session()->get('utilisateur');
-        $codeUtilisateur = $compteUtilisateur["code"];
+        $codeUtilisateur = $compteUtilisateur->getCode();
         $collectionReservationEtLigneDeReservation = DB::table('reservation')
                 ->select('*', 'v.nomVille as villeDepart', 'v2.nomVille as villeArrivee')
                 ->leftJoin('utilisateur', 'utilisateur.code', '=', 'reservation.codeUtilisateur')
