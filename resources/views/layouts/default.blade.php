@@ -49,7 +49,7 @@
                             Réservation
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="">Consulter vos réservations </a>
+                            <a class="dropdown-item" href="{{route("ConsultationReservations")}}">Consulter vos réservations </a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{route("SaisirReservation")}}">Effectuer une réservation</a>
                             <a class="dropdown-item" href="">Annuler une réservation</a>

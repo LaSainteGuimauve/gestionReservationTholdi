@@ -11,10 +11,14 @@
   |
  */
 
-Route::view('/','accueil')->name('PageAccueil');
-Route::post('AuthentificationCompteUtilisateur','AuthentificationController@authentificationCompteUtilisateur')->name('AuthentificationCompteUtilisateur');
-Route::group(['prefix' => 'reservation'], function(){
+Route::view('/', 'accueil')->name('PageAccueil');
+Route::post('AuthentificationCompteUtilisateur', 'AuthentificationController@authentificationCompteUtilisateur')->name('AuthentificationCompteUtilisateur');
+Route::group(['prefix' => 'reservation'], function () {
     Route::get('SaisirReservation', 'ReservationController@saisirReservation')->name('SaisirReservation');
+    Route::post('AjouterReservation', 'ReservationController@ajouterReservation')->name('AjouterReservation');
+    Route::post('AjouterLigneReservation', 'ReservationController@ajouterLigneReservation')->name('AjouterLigneReservation');
+    Route::get('ConsultationReservations', 'ReservationController@consulterReservation')->name('ConsultationReservations');
+    Route::post('FinaliserLaReservation', 'ReservationController@finaliserLaReservation')->name('FinaliserLaReservation');
+    Route::post('ConfirmerReservation', 'ReservationController@confirmerReservation')->name('ConfirmerReservation');
+
 });
-Route::post('AjouterReservation', 'ReservationController@ajouterReservation')->name('AjouterReservation');
-Route::post('AjouterLigneReservation', 'ReservationController@ajouterLigneReservation')->name('AjouterLigneReservation');

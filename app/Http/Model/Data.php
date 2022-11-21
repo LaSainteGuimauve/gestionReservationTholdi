@@ -8,7 +8,7 @@ use Exception;
 
 class Data {
 
-    static private $requete_ajouterUneReservation = "insert into reservation (dateDebutReservation, dateFinReservation,dateReservation, codeVilleMiseDispositioncodeVilleRendre,volumeEstime,codeUtilisateur) values (:dateDebutReservation,:dateFinReservation,:dateReservation,:codeVilleMiseDisposition,:codeVilleRendre,:volumeEstime,:codeUtilisateur)";
+    static private $requete_ajouterUneReservation = "insert into reservation (dateDebutReservation, dateFinReservation,dateReservation, codeVilleMiseDisposition, codeVilleRendre,volumeEstime,codeUtilisateur) values (:dateDebutReservation,:dateFinReservation,:dateReservation,:codeVilleMiseDisposition,:codeVilleRendre,:volumeEstime,:codeUtilisateur)";
     static private $requete_obtenirCollectionTypeContainer = " select * from typeContainer";
             
     static function init() {
@@ -61,12 +61,10 @@ class Data {
     static function ajouterUneReservation($dateDebutReservation, $dateFinReservation, $dateReservation, $codeVilleMiseDisposition, $codeVilleRendre, $volumeEstime, $codeUtilisateur) {
         $pdo = Data::init();
         $pdoStatement = $pdo->prepare(Data::$requete_ajouterUneReservation);
-        $pdoStatement->bindParam(":dateDebutReservation", 
-        $dateDebutReservation);
+        $pdoStatement->bindParam(":dateDebutReservation", $dateDebutReservation);
         $pdoStatement->bindParam(":dateFinReservation", $dateFinReservation);
         $pdoStatement->bindParam(":dateReservation", $dateReservation);
-        $pdoStatement->bindParam(":codeVilleMiseDisposition", 
-        $codeVilleMiseDisposition);
+        $pdoStatement->bindParam(":codeVilleMiseDisposition", $codeVilleMiseDisposition);
         $pdoStatement->bindParam(":codeVilleRendre", $codeVilleRendre);
         $pdoStatement->bindParam(":volumeEstime", $volumeEstime);
         $pdoStatement->bindParam(":codeUtilisateur", $codeUtilisateur);

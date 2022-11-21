@@ -49,21 +49,20 @@
                 <div class="card-body">
                     <table class="table">
                         <thead class="thead-light">
+                            
+                            <tr>
+                                <th scope="col">Type container</th>
+                                <th scope="col">Quantité</th>
+                            </tr>
+                            
+                        </thead>
+                        <tbody>
                             @foreach($typeContainer as $unTypeDeContainer)
                             @if(array_key_exists("qteReserver",$unTypeDeContainer))
                             <tr>
-                                <th scope="col">{{ $unTypeDeContainer['libelleTypeContainer'] }}</th>
-                                <th scope="col">{{ $unTypeDeContainer['qteReserver'] }}</th>
-                            </tr>
-                            @endif
-                            @endforeach
-                        </thead>
-                        <tbody>
-                            
-                            <tr>
 
-                                <td></td>
-                                <td></td>
+                                <td>{{ $unTypeDeContainer['libelleTypeContainer'] }}</td>
+                                <td>{{ $unTypeDeContainer['qteReserver'] }}</td>
                                 
                             </tr>
                             @endif
