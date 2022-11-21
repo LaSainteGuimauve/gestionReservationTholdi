@@ -37,12 +37,11 @@ $reservationCourante)
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                            <form action="{{ route('ConfirmerReservation') }}" method="post">
-                                {{ csrf_field() }}
-                                PHILIPPE VIGNARD 14
+                                
                                 <input type="hidden" name="codeReservation"
                                        value="{{current($reservationCourante)->codeReservation}}">
                                 <button class="btn btn-primary" type="submit">Confirmer la réservation</button>
+                                <form action="{{ route('ConfirmerReservation') }}" method="post">
                             </form>
                         </div>
                     </div>

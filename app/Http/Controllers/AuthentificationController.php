@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Model\Data;
+use App\Http\Model\UtilisateurQuery;
 
 class AuthentificationController extends Controller
 {
@@ -11,7 +12,10 @@ class AuthentificationController extends Controller
     {
 	$identifiant = $request->get("identifiant");
 	$motDePasse = $request->get("motDePasse");
-	$compteExistant = Data::obtenirCompteUtilisateur($identifiant, $motDePasse);
+	$compteExistant = UtilisateurQuery::create()
+                ->where('utilisateur.login = ?', $identifiant)
+                ->where('utilisateur.mdp = ?', $motDePasse)
+                ->findOne();
 	if ($compteExistant != false)
 	{
             $request->session()->put('connected');

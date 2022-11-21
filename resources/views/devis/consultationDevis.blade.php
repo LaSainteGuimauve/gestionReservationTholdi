@@ -40,7 +40,6 @@
                                     data-dismiss="modal">Annuler</button>
                             <form action="" method="post">
                                 {{ csrf_field() }}
-                                PHILIPPE VIGNARD 14
                                 <input type="hidden" name="codeDevis"
                                        value="{{$reservation->getDevis()->getCodeDevis()}}">
                                 <button class="btn btn-primary"

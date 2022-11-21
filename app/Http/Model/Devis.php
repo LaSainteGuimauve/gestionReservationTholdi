@@ -15,5 +15,7 @@ use App\Http\Model\Base\Devis as BaseDevis;
  */
 class Devis extends BaseDevis
 {
-
+    public function getDatedevis(){
+        return date('d/m/Y', $this->datedevis);
+    }
 }
