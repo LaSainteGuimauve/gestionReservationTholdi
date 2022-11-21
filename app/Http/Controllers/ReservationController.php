@@ -86,7 +86,7 @@ class ReservationController extends Controller {
                 ->get();
         $reservations = $collectionReservationEtLigneDeReservation->groupBy('codeReservation');
         $reservations = $reservations->toArray();
-        return view('reservation.consulterReservations', ['collectionReservationEtLigneDeReservation' => $reservations]);
+        return view('reservation.consultationReservations', ['collectionReservationEtLigneDeReservation' => $reservations]);
     }
 
     public function confirmerReservation(Request $request) {
