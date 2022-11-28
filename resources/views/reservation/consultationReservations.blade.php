@@ -4,8 +4,7 @@
 @endsection
 @section('content')
 @if (count($collectionReservationEtLigneDeReservation)>0)
-@foreach ($collectionReservationEtLigneDeReservation as 
-$reservationCourante)
+@foreach ($collectionReservationEtLigneDeReservation as $reservationCourante)
 <div class="col-md-9">
     <div class="card "> 
         <div class="card-header bg-info">
@@ -21,7 +20,7 @@ $reservationCourante)
                 Confirmer la réservation
             </button>
             <!-- Modal -->
-            <div class="modal fade" id="a{{current($reservationCourante)->numeroDeReservation}}" tabindex="-1" role="dialog" arialabelledby="confirmerReservationModalLabel" aria-hidden="true">
+            <div class="modal fade" id="#a{{current($reservationCourante)->numeroDeReservation}}" tabindex="-1" role="dialog" arialabelledby="confirmerReservationModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">

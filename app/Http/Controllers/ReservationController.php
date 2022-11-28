@@ -84,9 +84,10 @@ class ReservationController extends Controller {
                 ->leftJoin('ville as v2', 'v2.codeVille', '=', 'reservation.codeVilleRendre')
                 ->where('utilisateur.code', '=', $codeUtilisateur)
                 ->get();
-        $reservations = $collectionReservationEtLigneDeReservation->groupBy('codeReservation');
+        $reservations = $collectionReservationEtLigneDeReservation->groupBy('codeReservation');        
         $reservations = $reservations->toArray();
-        return view('reservation.consultationReservations', ['collectionReservationEtLigneDeReservation' => $reservations]);
+        return view(
+                'reservation.consultationReservations', ['collectionReservationEtLigneDeReservation' => $reservations]);
     }
 
     public function confirmerReservation(Request $request) {
